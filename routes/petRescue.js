@@ -1,7 +1,8 @@
-const express = require('express');
-const petRescueController = require('../controllers/petRescueController');
+const express = require("express");
+const petRescueController = require("../controllers/petRescueController");
 const router = express.Router();
+const app = express();
 
-router.get('/listings', petRescueController.fetchPetListings);
+router.get("/listings", petRescueController.fetchPetListings);
 
 module.exports = router;
