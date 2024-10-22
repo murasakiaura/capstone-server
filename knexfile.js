@@ -1,8 +1,8 @@
-require('dotenv').config();  // Load environment variables
+require("dotenv").config();
 
 module.exports = {
   development: {
-    client: 'mysql2',
+    client: "mysql2",
     connection: {
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
@@ -10,10 +10,10 @@ module.exports = {
       database: process.env.DB_NAME,
     },
     migrations: {
-      directory: './migrations',
+      directory: "./migrations",
     },
     seeds: {
-      directory: './seeds',
+      directory: "./seeds",
     },
   },
 };

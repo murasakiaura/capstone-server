@@ -1,8 +1,8 @@
 const express = require("express");
 const petRescueController = require("../controllers/petRescueController");
 const router = express.Router();
-const app = express();
 
 router.get("/listings", petRescueController.fetchPetListings);
+router.get("/pet/:id", petRescueController.fetchPetById);
 
 module.exports = router;

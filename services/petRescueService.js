@@ -1,8 +1,7 @@
-const knex = require('../db/knex');  // Import Knex configuration
+const knex = require("../db/knex");
 
-const getPetListings = async (filters) => {
-  // You can implement filtering logic here if needed
-  return knex('pets').select('*'); // Fetch all pets
+const getPetListings = async () => {
+  return knex("pets").select("*");
 };
 
 module.exports = {
