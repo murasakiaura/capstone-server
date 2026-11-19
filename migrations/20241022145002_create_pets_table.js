@@ -1,26 +1,18 @@
 /**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
+ * Add the image path to the pets table created by the first migration.
+ *
+ * This migration assumes a fresh database using the repository's
+ * initial migration sequence. Do not rewrite applied migrations
+ * in an existing production database.
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("pets", function (table) {
-    table.increments("id").primary();
+  return knex.schema.alterTable("pets", function (table) {
     table.string("image_path");
-    table.string("type").notNullable();
-    table.string("species").notNullable();
-    table.string("breed").notNullable();
-    table.integer("age").notNullable();
-    table.string("location").notNullable();
   });
 };
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-
 exports.down = function (knex) {
-  return knex.schema.table("pets", function (table) {
+  return knex.schema.alterTable("pets", function (table) {
     table.dropColumn("image_path");
   });
 };
